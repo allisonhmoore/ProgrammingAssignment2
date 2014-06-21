@@ -1,7 +1,22 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This code is modifed from the sample code provided in the example 
+## "Caching the Mean of a Vector" from Coursera R Programming class.
 
-## makeCacheMatrix creates a list containing a function to:
+## This script includes a pair of functions that together, compute
+## and cache the inverse of a matrix.
+##
+##      1. makeCacheMatrix: This function creates a "maxtrix" object
+##         which is actually list of functions,
+##         each of which return a matrix or matrix inverse.
+##      2. cacheSolve: This function computes the inverse of the
+##         "matrix" returned by makeCacheMatrix above. If the 
+##         inverse has already been calculated (and the matrix 
+##         has not changed), then cachesolve retreives the 
+##         inverse from the cache.
+##
+## Additionally, an example function call is provided in the file 
+##      test_cachematrix.R
+
+## The function makeCacheMatrix creates a list containing functions that:
 ## -- set the value of the matrix
 ## -- get the value of the matrix
 ## -- set the inverse of the matrix
@@ -21,11 +36,11 @@ makeCacheMatrix <- function(x = matrix()) {
              getinverse = getinverse)
 }
 
-## cacheSolve computes the inverse of the matrix returned by makeCacheMatrix above. 
-## It first checks to see if the matrix inverse has already been calculated. 
-## If so, it gets the matrix inverse from the cache and skips the computation. 
-## Otherwise, it calculates the matrix inverse and sets the value in the cache
-## via the setinverse function.
+## The function cacheSolve computes the inverse of the matrix returned by 
+## makeCacheMatrix above. It first checks to see if the matrix inverse has 
+## already been calculated. If so, it gets the matrix inverse from the cache 
+## and skips the computation. Otherwise, it calculates the matrix inverse 
+## and sets the value in the cache via the setinverse function.
 ##
 ## Matrix computations here assume the given matrix is square invertible.
 
