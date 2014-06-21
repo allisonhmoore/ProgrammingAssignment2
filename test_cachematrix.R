@@ -29,7 +29,7 @@ cacheSolve(m)
 
 ## use m's set function to create a new matrix
 ## containing numbers from a random normal distribution
-m$set(matrix(rnorm(16), 4, 4))
+m$set(matrix(rnorm(25), 5, 5))
 
 ## pass the matrix m to the cacheSolve() function
 ## the inverse should be returned (and it is very low probability

@@ -13,16 +13,18 @@
 ##         has not changed), then cachesolve retreives the 
 ##         inverse from the cache.
 ##
+## Matrix computations here assume the given matrix is square invertible.
+#
 ## Additionally, an example function call is provided in the file 
 ##      test_cachematrix.R
 
-## The function makeCacheMatrix creates a list containing functions that:
-## -- set the value of the matrix
-## -- get the value of the matrix
-## -- set the inverse of the matrix
-## -- get the inverse of the matrix
-
 makeCacheMatrix <- function(x = matrix()) {
+        ## The function makeCacheMatrix creates a list containing functions that:
+        ## -- set the value of the matrix
+        ## -- get the value of the matrix
+        ## -- set the inverse of the matrix
+        ## -- get the inverse of the matrix
+        
         inv <- NULL
         set <- function(y) {
                 x <<- y
@@ -36,15 +38,13 @@ makeCacheMatrix <- function(x = matrix()) {
              getinverse = getinverse)
 }
 
-## The function cacheSolve computes the inverse of the matrix returned by 
-## makeCacheMatrix above. It first checks to see if the matrix inverse has 
-## already been calculated. If so, it gets the matrix inverse from the cache 
-## and skips the computation. Otherwise, it calculates the matrix inverse 
-## and sets the value in the cache via the setinverse function.
-##
-## Matrix computations here assume the given matrix is square invertible.
-
 cacheSolve <- function(x, ...) {
+        ## The function cacheSolve computes the inverse of the matrix returned by 
+        ## makeCacheMatrix above. It first checks to see if the matrix inverse has 
+        ## already been calculated. If so, it gets the matrix inverse from the cache 
+        ## and skips the computation. Otherwise, it calculates the matrix inverse 
+        ## and sets the value in the cache via the setinverse function.
+        
         inv <- x$getinverse()
         if(!is.null(inv)) {
                 message("getting cached data")
