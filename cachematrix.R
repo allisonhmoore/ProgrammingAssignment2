@@ -5,8 +5,7 @@
 ## and cache the inverse of a matrix.
 ##
 ##      1. makeCacheMatrix(): returns a "maxtrix" object which is 
-##         actually a list of functions, each of which returns a matrix 
-#          or matrix inverse.
+##         actually a list of functions, each of which returns a matrix.
 ##      2. cacheSolve: returns the inverse of the "matrix" returned by 
 ##         makeCacheMatrix(). If the inverse has already been calculated 
 ##         (and the matrix has not changed), then cachesolve() retreives 
